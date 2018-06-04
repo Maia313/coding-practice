@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Oxygen:300,400,700,900');
+        body {
+            margin: 0;
+            font: 300 16px/22px "Oxygen", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .top {
+            text-align: center;
+        }
+
+        #title,
+        #description {
+            color: hsl(212, 31%, 25%);
+            line-height: 30px;
+        }
+
+        #title {
+            font-size: 40px;
+        }
+
+        #description {
+            font-size: 30px;
+            font-weight: 100;
+        }
+
+        .form-style {
+            display: flex;
+            left: 68px;
+            margin: 0 10% 40px 10%;
+            width: 80%;
+            background-color: hsl(185, 0%, 98%);
+        }
+
+        #survey-form {
+            margin: 0 10% 30px 10%;
+            font-size: 18px;
+        }
+
+        .form-label {
+            display: inline-block;
+            text-align: right;
+            vertical-align: top;
+            width: 40%;
+            padding: 5px;
+            margin-top: 10px;
+        }
+
+        .form-right {
+            display: inline-block;
+            text-align: left;
+            vertical-align: middle;
+            width: 52%;
+            margin-top: 10px;
+            padding: 5px;
+            padding-left: 10px;
+        }
+
+        .input-style {
+            width: 100%;
+            height: 30px;
+            margin-top: -2px;
+        }
+
+        #comments {
+            height: 70px;
+        }
+
+        #dropdown {
+            height: 30px;
+        }
+
+
+        input[type=checkbox] label {
+            position: relative;
+            left: -47px;
+            margin-left: 6px;
+            display: block;
+            padding-bottom: 25px;
+        }
+
+        .submit-div {
+            text-align: center;
+        }
+
+        #submit {
+            width: 90px;
+            border-radius: 5px;
+            background-color: hsl(212, 88%, 61%);
+            font-size: 20px;
+            color: #fff;
+            border: none;
+            padding:0.5em 1em;
+
+        }
+
+        /*smaller screens*/
+
+        @media screen and (max-width: 833px) {
+        .input-style {
+            width: 80%;
+        }
+        #dropdown {
+            width: 90%;
+        }
+            textarea {
+                margin-bottom: 10px;
+            }
+            
+        }
+
+        @media screen and (max-width: 520px) {
+        .form-label {
+            width: 100%;
+            text-align: left;
+        }
+        .form-right {
+            width: 80%;
+                float: left;
+        }
+        .input-style {
+            width: 100%;
+        }
+        #dropdown {
+            width: 100%;
+        }
+            }
+
+    </style>
+    <title>Survey</title>
+</head>
+<body>
+    <section class="main">
+        <div class="top">
+            <h1 id="title">Survey Form</h1>
+        </div>
+ 
+        <form id="survey-form" action="#" method="get">
+        <div class="wrap">
+            <div class="form-label">
+                <label for="name" id="name-label">*Name: </label>
+            </div>
+            <div class="form-right">
+                <input type="text" class="input-style bstyle" name="name" id="name" placeholder=" Enter your name" required>
+            </div>
+        </div>
+
+        <div class="wrap">
+            <div class="form-label">
+                <label for="email" id="email-label">*Email: </label>
+            </div>
+            <div class="form-right">
+                <input type="email" class="input-style bstyle" name="email" id="email" placeholder=" Enter your email" required>
+            </div>
+        </div>
+
+        <div class="wrap">
+            <div class="form-label">
+                <label for="number" id="number-label">*Age:</label>
+            </div>
+            <div class="form-right">
+                <input type="number" class="input-style bstyle" name="number" id="number" placeholder=" Age" min="1" max="195" required>
+             </div>
+        </div>
+        <div class="drop-opt">
+            <div class="form-label">
+                <label for="post" class="left-col">Which option best describes your current role?</label>
+            </div>
+            <div class="form-right">
+                <select id="dropdown" name="post">
+                    <option disabled> Select an option</option>
+                    <option selected> Student</option>
+                    <option> Full Time Job</option>
+                    <option> Full Time Learner</option>
+                    <option> Prefer Not To Say</option>
+                    <option> Other</option>
+                </select>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="form-label">
+            <label for="rad-select">*How likely is that you will recommend FCC to a friend?</label>
+        </div>
+        <div class="form-right">
+          <div class="radio">
+            <input type="radio" id="definitely" name="rad-select" value="1">
+            <label for="definitely" class="left-col">Definitely</label>
+            <br>
+            <input type="radio" id="maybe" name="rad-select" value="2">
+            <label for="maybe" class="left-col">Maybe</label>
+            <br>
+            <input type="radio" id="notSure" name="rad-select" value="3">
+            <label for="notSure" class="left-col">Not sure</label>
+          </div>
+        </div>
+        </div>
+        <div class="drop-opt">
+            <div class="form-label">
+            <label for="post" class="left-col">What do you like most in FCC:</label>
+        </div>
+        <div class="form-right">
+          <select id="dropdown" name="post">
+            <option selected disabled> Select an option</option>
+            <option> Challenges</option>
+            <option> Projects</option>
+            <option> Community</option>
+            <option> Open source</option>
+          </select>
+        </div>
+        <div class="wrap">
+        <div class="form-label">
+          <label for="chooseBox">Things that should be improved in the future (check all that apply):</label>
+        </div>
+        <div class="checkboxes form-right">
+          <input name="chooseBox" type="checkbox" value="1">
+          <label for="front-check">
+            Front-end Projects</label>
+          <br>
+          <input name="chooseBox" type="checkbox" value="2">
+          <label for="back-check">
+            Back-end Projects</label>
+          <br>
+          <input name="chooseBox" type="checkbox" value="3">
+          <label for="visual-check">
+            Data Visualization</label>
+          <br>
+          <input name="chooseBox" value="4" type="checkbox">
+          <label for="challenge-check">
+            Challenges</label>
+          <br>
+          <input name="chooseBox" value="5" type="checkbox">
+          <label for="open-check">
+            Open Source Community</label>
+          <br>
+          <input name="chooseBox" value="6" type="checkbox">
+          <label for="gitter-check">
+            Gitter help rooms</label>
+          <br>
+          <input name="chooseBox" value="7" type="checkbox">
+          <label for="video-check">
+            Videos</label>
+          <br>
+          <input name="chooseBox" value="8" type="checkbox">
+          <label for="meet-check">
+            City Meetups</label>
+
+          <br>
+          <input name="chooseBox" value="9" type="checkbox">
+          <label for="wiki-check">
+            Wiki</label>
+          <br>
+          <input name="chooseBox" value="10" type="checkbox">
+          <label for="for-check">
+            Forum</label>
+          <br>
+          <input name="chooseBox" value="11" type="checkbox">
+          <label for="course-check">
+            Additional Courses</label>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="form-label">
+          <label for="comments">Any Comments or Suggestions?</label>
+        </div>
+        <div class="form-right">
+          <textarea rows="3" cols="28" class="input-style bstyle" name="comments" id="comments" placeholder=" Enter your comment here ..."></textarea>
+        </div>
+      </div>
+      <br>
+      <div class="submit-div">
+        <input id="submit" type="Submit">
+      </div>
+    </form>
+</section>
+</body>
+</html>
